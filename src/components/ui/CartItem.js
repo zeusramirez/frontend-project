@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from "react";
-
+const apiKey = process.env.REACT_APP_KEY
 
 export default function CartItem(props) {
   const [foodImg, setFoodImg] = useState("");
   useEffect(() => {
     fetch(
-      `https://www.googleapis.com/customsearch/v1?key=AIzaSyCjV1nYGvDaMuK1f679Uq1Y2rgPTmDSlHE&cx=f41a4840ed901c6d0&searchType=image&num=1&q=${props.name}`
+      `https://www.googleapis.com/customsearch/v1?key=${apiKey}&cx=f41a4840ed901c6d0&searchType=image&num=1&q=${props.name}`
     )
       .then((res) => res.json())
       .then((result) => result.items ? setFoodImg(result.items[0].image.thumbnailLink) : setFoodImg("https://p.kindpng.com/picc/s/79-798754_hoteles-y-centros-vacacionales-dish-placeholder-hd-png.png"));

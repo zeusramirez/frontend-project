@@ -22,62 +22,72 @@ export default function Account(props) {
         }).then(console.log)
     }
   if (userInfo){return (
-    <div className="container">
-    <div className="wrapper bg-white mt-sm-5">
-      <h4 className="pb-4 border-bottom">Account settings</h4>
-      <div className="d-flex align-items-start py-3 border-bottom">
+    <div className="container backgroung">
+    <div className="wrapper  mt-sm-5">
+      <h4 className="pb-4 border-bottom white " style={{textAlign:'center'}}>Account settings</h4>
+      <div className="d-flex align-items-start py-3 border-bottom" style={{display:'flex' , justifyContent:"center", alignItems:'center'}}>
         
-        <img src="https://media.istockphoto.com/vectors/default-profile-picture-avatar-photo-placeholder-vector-illustration-vector-id1214428300?k=6&m=1214428300&s=170667a&w=0&h=hMQs-822xLWFz66z3Xfd8vPog333rNFHU6Q_kc9Sues=" className="img" alt="default" />
+        <img src="https://media.istockphoto.com/vectors/default-profile-picture-avatar-photo-placeholder-vector-illustration-vector-id1214428300?k=6&m=1214428300&s=170667a&w=0&h=hMQs-822xLWFz66z3Xfd8vPog333rNFHU6Q_kc9Sues="  alt="default" style={{width:"25%", borderRadius:'25px'}} />
         <div className="pl-sm-4 pl-2" id="img-section">
           
-          <b>Profile Photo</b>
+       
         </div>
       </div>
       <div className="py-2">
         <div className="row py-2">
-          <div className="col-md-6">
+          <div className="col-md-6 white">
             
             <label >Name</label>
             <input
               type="text"
-              className="bg-light form-control"
+              className="bg-light form-control inputStyle"
               placeholder={userInfo.name}
+            />
+          </div>
+
+          <div className="col-md-6 white">
+            
+            <label >Address</label>
+            <input
+              type="text"
+              className="bg-light form-control inputStyle"
+              placeholder={userInfo.address}
             />
           </div>
         </div>
         <div className="row py-2">
-          <div className="col-md-6">
+          <div className="col-md-6 white">
             
             <label >Delivery Instructions</label>
             <input onChange={(e)=> setUserInfo({...userInfo, delivery_instructions:e.target.value})}
               type="text"
-              className="bg-light form-control"
+              className="bg-light form-control inputStyle"
               value={userInfo.delivery_instructions}
             />
           </div>
-          <div className="col-md-6 pt-md-0 pt-3">
+          <div className="col-md-6 pt-md-0 pt-3 white">
             
             <label >Phone Number</label>
             <input
               type="tel"
-              className="bg-light form-control"
+              className="bg-light form-control inputStyle"
               placeholder = {userInfo.phone}
             />
           </div>
         </div>
         <div className="py-3 pb-4 border-bottom">
           
-          <button onClick={saveChanges} className="btn btn-primary mr-3">Save Changes</button>
-          <button className="btn border button">Cancel</button>
+          <button onClick={saveChanges} className="btn btn-info mr-3">Save Changes</button>
+         
         </div>
-        <div className="d-sm-flex align-items-center pt-3" id="deactivate">
+        <div className="d-sm-flex align-items-center white pt-3" id="deactivate">
           <div>
             
             <b>Sign out of your account</b>
           </div>
           <div className="ml-auto">
             
-            <button onClick={signUserOut}className="btn danger">Sign Out</button>
+            <button onClick={signUserOut}className="btn btn-danger">Sign Out</button>
           </div>
         </div>
       </div>

@@ -11,7 +11,7 @@ export default function Restaurants() {
 
   if (data.length > 0) {
     return (
-      <div className="container">
+      <div className="container background">
         <div className="row">
           {data.map((restaurant) => (
             <div className="col-6 col-md-4" style={{ marginBottom: "25px" }}>

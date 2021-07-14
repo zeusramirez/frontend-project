@@ -47,39 +47,39 @@ export default function Login(props) {
 
 
     // <input onChange={(e) => setUserInput(e.target.value)}value={userInput} classNameName="form-control form-group" placeholder="Name" required autofocus />
-    //           <button onClick={signIn}classNameName="btn btn-lg btn-primary btn-block btn-signin" type="submit" >
+    //           <button onClick={signIn}classNameName="btn btn-lg btn-info btn-block btn-signin" type="submit" >
     //             Login
     //           </button>
   return (
     <div className="container-fluid">
 		<div className="container">
-			<h2 className="text-center" id="title">SIGN IN | SIGN UP</h2>
+			<h2 className="text-center white" id="title">SIGN IN | SIGN UP</h2>
 			 <p className="text-center"></p>
  			<hr/>
 			<div className="row">
 				<div className="col-md-5">					
-							<p className="text-uppercase pull-center"> SIGN UP.</p>	
+							<p className="text-uppercase pull-center white"> SIGN UP.</p>	
  							<div className="form-group">
-								<input value={newName} onChange={(e) => setNewName(e.target.value)} className="form-control input-lg" placeholder="name"/>
+								<input value={newName} onChange={(e) => setNewName(e.target.value)} className="form-control input-lg inputStyle" placeholder="name"/>
 							</div>
 
 							<div className="form-group">
-								<input value={newAddress} onChange={(e) => setNewAddress(e.target.value)} className="form-control input-lg" placeholder="Address"/>
+								<input value={newAddress} onChange={(e) => setNewAddress(e.target.value)} className="form-control input-lg inputStyle" placeholder="Address"/>
 							</div>
 							<div className="form-group">
-								<input value={newPhone} onChange={(e) => setnewPhone(e.target.value)} className="form-control input-lg" placeholder="Phone Number"/>
+								<input value={newPhone} onChange={(e) => setnewPhone(e.target.value)} className="form-control input-lg inputStyle" placeholder="Phone Number"/>
 							</div>
 								<div className="form-group">
-								<input  value={newInstructions} onChange={(e) => setnewInstrcuctions(e.target.value)} className="form-control input-lg" placeholder="Delivery Instructions"/>
+								<input  value={newInstructions} onChange={(e) => setnewInstrcuctions(e.target.value)} className="form-control input-lg inputStyle" placeholder="Delivery Instructions"/>
 							</div>
 							<div className="form-check">
-								<label className="form-check-label">
-								  <input type="checkbox" className="form-check-input"/>
+								<label className="form-check-label white">
+								  <input type="checkbox" className="form-check-input inputStyle"/>
 								  By Clicking register you're agree to our policy & terms to share a portion of your food with the delivery driver.
 								</label>
 							  </div>
  							<div>
- 								<button onClick={createUser} type="submit" className="btn btn-lg btn-primary" >Sign Up </button>
+ 								<button onClick={createUser} type="submit" className="btn btn-lg btn-info" >Sign Up </button>
  							</div>
 				</div>
 				
@@ -87,12 +87,12 @@ export default function Login(props) {
 				</div>
 				
 				<div className="col-md-5">					
-							<p className="text-uppercase"> Login using your account: </p>	
+							<p className="text-uppercase white"> Login using your account: </p>	
  								
 							<div className="form-group">
-								<input onChange={(e) => setUserInput(e.target.value)}value={userInput} className="form-control input-lg" placeholder="Name"/>
+								<input onChange={(e) => setUserInput(e.target.value)}value={userInput} className="form-control input-lg inputStyle" placeholder="Name"/>
 							</div>
-                            <button onClick={signIn} className="btn btn-lg btn-primary btn-block btn-signin" type="submit" >Login </button>
+                            <button onClick={signIn} className="btn btn-lg btn-info btn-block btn-signin" type="submit" >Login </button>
 				</div>
 			</div>
 		</div>

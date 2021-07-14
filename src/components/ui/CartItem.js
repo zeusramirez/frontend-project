@@ -12,7 +12,7 @@ export default function CartItem(props) {
   }, []);
 
   return (
-    <div className="d-flex flex-row justify-content-between align-items-center p-2 mt-4 px-3 rounded" style={{boxShadow: "rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px", }}>
+    <div className="d-flex flex-row justify-content-between align-items-center p-2 mt-4 px-3 rounded menuItem white" style={{boxShadow: "rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px", }}>
       <div className="mr-1">
         <img className="rounded" src={foodImg} width="70" alt={props.name}/>
       </div>

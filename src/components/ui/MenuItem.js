@@ -13,12 +13,13 @@ export default function MenuItem({user, name, price, id, restaurant_id, addItemT
       .then((result) => result.items ? setFoodImg(result.items[0].image.thumbnailLink) : setFoodImg("https://p.kindpng.com/picc/s/79-798754_hoteles-y-centros-vacacionales-dish-placeholder-hd-png.png"))
   }, []);
   return (
-    <li className="list-group-item disabled">
+    <li className="list-group-item background menuItem white">
       <div
         style={{
           display: "flex",
           justifyContent: "space-between",
           width: "100%",
+          alignItems:'center'
         }}
       >
         <div className="mr-1">
@@ -34,9 +35,9 @@ export default function MenuItem({user, name, price, id, restaurant_id, addItemT
           <span style={{ marginLeft: "15px" }}>Price:</span>
           {price}
         </p>
-       { user ? <button onClick={() => addItemToCart({ name, id, price })} type="button" className="btn btn-primary">
+       { user ? <button onClick={() => addItemToCart({ name, id, price })} type="button" className="btn btn-info">
           Add to cart
-        </button>:<Link to='/login' type="button" className="btn btn-primary">
+        </button>:<Link to='/login' type="button" className="btn btn-info">
           Login to Add
         </Link>
         }

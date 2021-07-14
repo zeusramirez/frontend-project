@@ -22,8 +22,8 @@ function App() {
     setCartItems([])
   }
   return (
-    <div className="App">
-      <Navbar />
+    <div className="App background">
+      <Navbar user={user} setUser={setUser}/>
       <Banner />
       <Switch>
         <Route exact path='/' render={() => <Restaurants/>} />

@@ -14,10 +14,15 @@ export default function Menu(props) {
 
   if (menu.length > 0) {
     return (
-      <div className="container">
+      <div className="container" >
         <ul className="list-group">
           {menu.map(item => <MenuItem user={props.user}addItemToCart={props.addItemToCart} key={item.id} {...item}/>)}
         </ul>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
       </div>
     );
   } else {

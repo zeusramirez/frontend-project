@@ -1,0 +1,58 @@
+
+.background{
+    background:#030415;
+}
+.shadow{
+
+ 
+  box-shadow: 1px 1px 10px 1px aquamarine;
+}
+
+.fontColor{
+    color: aqua;
+}
+
+
+.fontColor:hover{
+    color: aquamarine;
+}
+
+.white{
+    color:white;
+}
+
+.white:hover{
+    color:aquamarine;
+}
+
+
+
+.borderEffect{
+    border: 1px aquamarine solid;
+    border-radius: 25px;
+}
+.inputStyle{
+    border: 2.5px aqua solid;
+
+}
+
+.inputStyle:hover{
+    border: 2.5px tomato solid;
+}
+.menuItem{
+    border: 1px white solid;
+    margin-bottom: 15px;
+    box-shadow: 1px 1px 10px 1px rgb(99, 99, 99);
+}
+
+.menuItem:hover{
+  transition: all 0.2s;
+  font-size: 23px;
+}
+
+.card:hover{
+    box-shadow: 1px 1px 10px 1px tomato;
+    border: 1px tomato solid;
+    transition: all 0.5s;
+    transform: translateY(-5px);
+}

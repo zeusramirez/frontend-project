@@ -16,7 +16,7 @@ export default function Menu(props) {
     return (
       <div className="container">
         <ul className="list-group">
-          {menu.map(item => <MenuItem addItemToCart={props.addItemToCart} key={item.id} {...item}/>)}
+          {menu.map(item => <MenuItem user={props.user}addItemToCart={props.addItemToCart} key={item.id} {...item}/>)}
         </ul>
       </div>
     );

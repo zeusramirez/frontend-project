@@ -1,12 +1,20 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 
 
 export default function CartItem(props) {
+  const [foodImg, setFoodImg] = useState("");
+  useEffect(() => {
+    fetch(
+      `https://www.googleapis.com/customsearch/v1?key=AIzaSyCjV1nYGvDaMuK1f679Uq1Y2rgPTmDSlHE&cx=f41a4840ed901c6d0&searchType=image&num=1&q=${props.name}`
+    )
+      .then((res) => res.json())
+      .then((result) => result.items ? setFoodImg(result.items[0].image.thumbnailLink) : setFoodImg("https://p.kindpng.com/picc/s/79-798754_hoteles-y-centros-vacacionales-dish-placeholder-hd-png.png"));
+  }, []);
 
   return (
     <div className="d-flex flex-row justify-content-between align-items-center p-2 mt-4 px-3 rounded" style={{boxShadow: "rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px", }}>
       <div className="mr-1">
-        <img className="rounded" src="https://i.imgur.com/XiFJkhI.jpg" width="70" alt={props.name}/>
+        <img className="rounded" src={foodImg} width="70" alt={props.name}/>
       </div>
       <div className="d-flex flex-column align-items-center product-details">
         <span className="font-weight-bold">{props.name}</span>

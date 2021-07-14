@@ -19,6 +19,8 @@ export default function Navbar() {
               </li>
               <li className="nav-item">
                 <Link className="nav-link disabled" to="/account"  aria-disabled="true">Account</Link>
+              </li><li className="nav-item">
+                <Link className="nav-link disabled" to="/login"  aria-disabled="true">LogOut</Link>
               </li>
             </ul>
           </div>

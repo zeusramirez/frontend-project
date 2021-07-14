@@ -1,9 +1,17 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import CartItem from './CartItem'
+import {useHistory } from "react-router-dom"
+
 
 export default function Cart(props) {
+    let history = useHistory();
+    useEffect(() => {
+        if (!props.user){
+            history.push("/login")
+        }
+      }, []); 
     function placeOrder() {
-        const newOrder = props.cartItems.map(item => ({user_id:1, menu_id: item.id, status:"Ordered"}))
+        const newOrder = props.cartItems.map(item => ({user_id:props.user.id, menu_id: item.id, status:"Ordered"}))
         const orders = {orders:newOrder}
         fetch('http://localhost:9393/create_order',{
             method: "POST",

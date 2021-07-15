@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import CartItem from './CartItem'
 import { useHistory } from 'react-router'
+import Modal from './Modal'
 export default function Orders(props) {
     
     const [existingOrder, setExistingOrder] = useState([])
     const [itemListStatus, setItemListStatus] = useState(false)
+  const [showModal, setShowModal] = useState(false)
     let history = useHistory();
     useEffect(() => {
         if (!props.user){
@@ -18,16 +20,20 @@ export default function Orders(props) {
                 headers: {"Content-Type": "application/json"}
             }).then(data => {if (data.status === 200){
                 setItemListStatus(itemListStatus => !itemListStatus)}}
-                    )
+                )
+                setShowModal(true)
             // .then(data => { if (data.status === 200){
             //   window.location.reload(true)}
             // })
       }
-      console.log(itemListStatus)
-    console.log(existingOrder)
     return (
-        <div>
-            {existingOrder.map(({status, item, restaurant, order_id}) => <CartItem key={item.id}  order_id={order_id} restaurant={restaurant} status={status} removeItemHistory={removeItemHistory} {...item}/>)}
+        <div className="container">  
+      <br />
+      <br />
+      <br />
+        <h2 className="text-center white">Order History</h2>
+        {showModal ? <Modal showModal={showModal} setShowModal={setShowModal} title={"Order Deleted."}/>: null}
+            {existingOrder.map(({status, item, restaurant, order_id, quantity}) => <CartItem key={item.id}  order_id={order_id} restaurant_name={restaurant} status={status} quantity={quantity} removeItemHistory={removeItemHistory} {...item}/>)}
         </div>
     )
 }

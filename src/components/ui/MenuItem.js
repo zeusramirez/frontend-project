@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import {Link} from 'react-router-dom'
 
-export default function MenuItem({user, name, price, id, restaurant_id, addItemToCart,}) {
+export default function MenuItem({ setShowModal, user, name, price, id, restaurant_id, addItemToCart, restaurant_name}) {
   const apiKey = process.env.REACT_APP_KEY
 
   const [foodImg, setFoodImg] = useState("");
+  const quantity = 1
   useEffect(() => {
     fetch(
       `https://www.googleapis.com/customsearch/v1?key=${apiKey}&cx=f41a4840ed901c6d0&searchType=image&num=1&q=${name}`
@@ -35,7 +36,10 @@ export default function MenuItem({user, name, price, id, restaurant_id, addItemT
           <span style={{ marginLeft: "15px" }}>Price:</span>
           {price}
         </p>
-       { user ? <button onClick={() => addItemToCart({ name, id, price })} type="button" className="btn btn-info">
+       { user ? <button onClick={() => {
+         addItemToCart({ restaurant_name, quantity,restaurant_id, name, id, price })
+         setShowModal(true)
+      }} type="button" className="btn btn-info">
           Add to cart
         </button>:<Link to='/login' type="button" className="btn btn-info">
           Login to Add

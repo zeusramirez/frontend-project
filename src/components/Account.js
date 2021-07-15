@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router";
+import Loading from "./ui/Loading";
 
 export default function Account(props) {
   let history = useHistory();
@@ -27,7 +28,7 @@ export default function Account(props) {
       <h4 className="pb-4 border-bottom white " style={{textAlign:'center'}}>Account settings</h4>
       <div className="d-flex align-items-start py-3 border-bottom" style={{display:'flex' , justifyContent:"center", alignItems:'center'}}>
         
-        <img src="https://media.istockphoto.com/vectors/default-profile-picture-avatar-photo-placeholder-vector-illustration-vector-id1214428300?k=6&m=1214428300&s=170667a&w=0&h=hMQs-822xLWFz66z3Xfd8vPog333rNFHU6Q_kc9Sues="  alt="default" style={{width:"25%", borderRadius:'25px'}} />
+        <img src="https://www.thispersondoesnotexist.com/image"  alt="default" style={{width:"25%", borderRadius:'25px'}} />
         <div className="pl-sm-4 pl-2" id="img-section">
           
        
@@ -95,10 +96,7 @@ export default function Account(props) {
     </div>
   );
 }else{
-  return (
-    <div>
-      <h2>loading...</h2>
-    </div>
+  return (<Loading/>
   )
 }
 }

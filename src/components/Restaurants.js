@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Card from "./ui/Card";
+import Banner from "./Banner";
+import Loading from "./ui/Loading";
 
 export default function Restaurants() {
   const [data, setData] = useState([]);
@@ -12,6 +14,7 @@ export default function Restaurants() {
   if (data.length > 0) {
     return (
       <div className="container background">
+      <Banner />
         <div className="row">
           {data.map((restaurant) => (
             <div className="col-6 col-md-4" style={{ marginBottom: "25px" }}>
@@ -22,6 +25,6 @@ export default function Restaurants() {
       </div>
     );
   } else {
-    return <div>Loading.....!!</div>;
+    return <Loading/>;
   }
 }
